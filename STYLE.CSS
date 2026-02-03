@@ -1,0 +1,62 @@
+body{
+    background-color: lightpink;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-image: url("./images/rm456-010.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    padding-top: 200px;
+}
+
+.page{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+}
+
+.letter{
+    width:360px;
+    max-width:90%;
+    perspective:1200px;
+}
+
+.cover{
+    background:#fff7f9;
+    border:2px solid #f2c1d1;
+    padding:24px;
+    border-radius:12px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.15);
+}
+
+#toggle{
+    margin-top:12px;
+    padding:10px 16px;
+    border-radius:8px;
+    border:1px solid #d98ca1;
+    background:#ff7b9c;
+    color:white;
+    cursor:pointer;
+}
+
+.letter-content{
+    margin-top:16px;
+    background:rgba(255,255,255,0.95);
+    padding:20px;
+    border-radius:8px;
+    transform-origin:top center;
+    transform:rotateX(-90deg);
+    transition:transform 600ms cubic-bezier(.2,.9,.3,1), opacity 300ms;
+    opacity:0;
+}
+
+.letter.open .letter-content{
+    transform:rotateX(0deg);
+    opacity:1;
+}
+
+@media (max-width:480px){
+    .cover{padding:16px}
+    #toggle{width:100%}
+}

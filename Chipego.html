@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A surprise</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+</head>
+<body>
+</body>
+</html>
+    <body>
+        <div class="page">
+            <div class="letter" id="letter">
+                <div class="cover" id="cover">
+                    <h2> IT'S A SURPRISE!!</h2>
+                    <button id="toggle" aria-expanded="false">Open Letter</button>
+                </div>
+
+                <div class="letter-content" id="content" aria-hidden="true">
+                    <h1>HAPPY VALENTINE'S DAY!</h1>
+                    <p>Roses are red, violets are blue,<br>
+                        Friends like you are rare and true.<br>
+                        Though I may not say it every day,<br>
+                        I'm grateful for our friendship.<br>
+                        Wishing you a day filled with love and joy!<br>
+                    </p>
+                    <p>here is a kah dyonko!</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const btn = document.getElementById('toggle');
+            const letter = document.getElementById('letter');
+            const content = document.getElementById('content');
+
+            btn.addEventListener('click', () => {
+                const open = letter.classList.toggle('open');
+                btn.textContent = open ? 'Close Letter' : 'Open Letter';
+                btn.setAttribute('aria-expanded', open);
+                content.setAttribute('aria-hidden', !open);
+            });
+        </script>
+
+    </body>
+</html>
